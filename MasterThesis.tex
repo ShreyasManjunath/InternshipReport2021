@@ -1,0 +1,60 @@
+% ****************************************************************************************************
+% Master Thesis Template
+% Faculty of Electrical Engineering and Information Technology
+% Darmstadt University of Applied Sciences
+% KU, 15.9.2020
+
+
+% ****************************************************************************************************
+% Set your personel data here
+% ****************************************************************************************************
+
+\newcommand{\myTitle}{Camera pose and Keyframe trajectory estimation on Unmanned Aerial Vehicles\xspace}
+\newcommand{\myDegree}{Master of Science (M.Sc.)\xspace}
+\newcommand{\myName}{Shreyas Manjunath\xspace}
+\newcommand{\myId}{766460\xspace}
+\newcommand{\myProf}{Prof. Dr. Stephan Neser\xspace}
+\newcommand{\myOtherProf}{Mr. Boitumelo Ruf, M.Sc \xspace}
+\newcommand{\myLocation}{Karlsruhe\xspace}
+\newcommand{\myDate}{March 31, 2021\xspace}
+\newcommand{\myCompany}{Fraunhofer IOSB\xspace}
+
+% ****************************************************************************************************
+% Load settings
+% ****************************************************************************************************
+\include{settings}
+
+% ****************************************************************************************************
+% Make Titlepage, Declaration, Confidentiality (if required), Abstract, Table of Contents
+% ****************************************************************************************************
+\begin{document}
+\input{TeX/Titlepage.tex}
+\cleardoublepage
+\pagenumbering{roman}
+\input{TeX/declaration.tex} 
+\input{TeX/NDA}
+\input{TeX/Abstract}
+\input{TeX/Acknowledgement}
+\tableofcontents                  
+\listoffigures
+\cleardoublepage
+\pagestyle{headings}
+\pagenumbering{arabic}
+% ****************************************************************************************************
+% Add your Chapters here!
+% ****************************************************************************************************
+\setstretch{1.3}
+\input{TeX/Chapter_01} 
+\input{TeX/Chapter_02}
+\input{TeX/Chapter_03}
+\input{TeX/Chapter_04}
+\input{TeX/Chapter_05}
+\input{TeX/Conclusion}
+% ****************************************************************************************************
+% Appendix
+% ****************************************************************************************************
+\appendix
+\nocite{*} 
+\bibliographystyle{plaindin}    
+\bibliography{bibliography} 
+\end{document}

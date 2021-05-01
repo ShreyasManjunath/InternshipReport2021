@@ -1,0 +1,7 @@
+\chapter*{Abstract}
+
+The following report is about my study-wise mandatory internship carried out from October 2020 - March 2021 in the Video Evaluation Systems(VID) department at Fraunhofer IOSB, Karlsruhe.\\
+\\
+This internship work presents the initial setup and functioning of Unmanned Aerial vehicle or Drone, integration of Visual Inertial Simultaneous Localization and Mapping (VI-SLAM) system and Visual SLAM system coupled with geo-referencing on drones. Using Visual SLAM system, Camera Poses and Keyframe trajectory are estimated and transformed from a Local SLAM co-ordinate frame to ENU system and a global co-ordinate frame(ECEF) with the help of a geo-referencing node. This opens up a new dimension in visualizing the camera poses in Earth Centered Earth Fixed (ECEF) scale. The latter part of the implementation also explains the drift of the Visual SLAM generated pose trajectory, downside in the usage of complete set of Poses for calculation of Transformation matrix and a work-through to tackle these challenges. ORBSLAM3\cite{ORBSLAM3_2020} was employed for the purpose of SLAM operation with the Monocular Visual SLAM. Further, the work also includes the development of stereo rectification ROS package for the UAVs' stereo image streams.\\
+\\
+I shall share my experience and learning I gained through the course of my internship. I would also share the information on different tasks that were carried out and explanation on the development of the packages.

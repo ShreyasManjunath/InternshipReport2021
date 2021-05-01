@@ -1,0 +1,41 @@
+\chapter{Introduction}
+\label{ch:intro}
+This chapter documents the initial stages of the internship, getting to know the workflow, hardware and software platforms and tools with which the project is carried out. This chapter also explains the project base objectives and goals to achieve, expected outcome and initial start to the development. More details on how each steps were carried out to complete the task are explained in further sections.
+
+%
+% Section: About the company
+%
+\section{About the Company}
+\label{sec:intro:aboutthecompany}
+The Fraunhofer Institute of Optronik, Systemtechnik and Bildauswertung IOSB is one of the largest institutes for applied research in the field of image acquisition and image evaluation in Europe. Fraunhofer IOSB is mainly situated and worked out of Karlsruhe and Ettlingen, some parts in Ilmenau and Lemgo and a research group in Rostock. It's investment and operating budget in 2019 totaled a million euros with around one third each comes from basic public funding, third-party research funds and industrial contracts. Fraunhofer institute as a whole was started back in the year 1956 in Tübingen. However, with the current name Frauhofer IOSB, it started in 2010.\\
+
+This internship was carried out at the department of  Video Evaluation Systems (VID). VID deals with the automatic evaluation of signals from moving imaging sensors in complex, possibly non-cooperative, scenarios. This sensor technology is used, for example, in reconnaissance and surveillance applications as an integrated component in in airborne, space-based or mobile land-based platforms. VID develops and integrates image analysis algorithms for autonomous or interactive systems.
+
+%
+% Section: Motivation
+%
+\section{Motivation}
+\label{sec:intro:motivation}
+Unmanned Aerial Vehicles(UAVs) or drones, in general, are a key application in the field of indoor or outdoor mapping and surveillance not only for scientific research but for commercial usage as well. There has been an increase in innovations for localization and mapping using cameras, inertial sensors and GPS module, popularly know as Visual Simultaneous Localization and Mapping (Visual SLAM) and Visual Inertial Simultaneous Localization and Mapping (VI-SLAM). Traditionally, Mapping and Visual Odometry was confined to offline processing or post processing of already available data. This approach uses UAVs only to record the data, assumes to have all the required data to be available and correct. Finally, the recorded data is post processed on a different computer with suitable tools. Down the line, we have seen many On-board computers with powerful CPU and GPU in the market and in recent times mediocre to advanced drones come pre-installed with these powerful On-board computers. A good boost to on-board computers has made online processing or on-the-go processing easier and efficient.Few extremely powerful libraries that supports online processing of Visual SLAM and VI-SLAM includes ORBSLAM3 \cite{ORBSLAM3_2020}, VINS-Mono \cite{qin2017vins} and Open-Vins \cite{Geneva2020ICRA}. These libraries or tools when used to map a scene or an outdoor space, provides list of keyframes estimated with reference to their own SLAM co-ordinate system and corresponding point cloud for the usage of re-construction. Clearly, this opens up plethora of opportunities to develop new applications.         
+
+\section{Objective}
+\label{sec:intro:objective}
+The main objective of the project is to estimate camera poses and keyframe trajectory out of a Visual SLAM and a VI-SLAM system and transform it into a known coordinate system like East-North-Up (ENU) for a more generalized perspective of the mapping and camera pose estimation. To achieve the above mentioned goal, the tasks were divided into different stages as follows-
+\begin{enumerate}
+    \item Setting up drone with installation of Drone SDK and Robot Operating System (ROS) \cite{quigley2009ros} on the on-board computer.
+    \item Installing ORBSLAM3\cite{ORBSLAM3_2020} library on the on-board computer and testing the example applications.
+    \item Calibrating the main camera and the IMU sensor of the drone to accommodate the functioning of V- SLAM and VI-SLAM features of the ORBSLAM3\cite{ORBSLAM3_2020}.
+    \item Development of a ROS package for estimating camera poses out of V-SLAM and VI-SLAM to a local coordinate system.
+    \item Development of a geo-referencing node i.e  Visual SLAM fused with GPS data for trajectory estimation in ENU coordinate system and Earth Centric Earth Fixed(ECEF) coordinate system.
+    \item Development of a stereo image rectification ROS package for the drone. 
+\end{enumerate}
+
+\section{Structure of the report}
+\label{sec:intro:structureofthereport}
+Starting from the next chapter, the report describes the different technologies and technical aspects used in the work. It also gives a brief information of the drone used for the work and it's initial setup to get it functioning. The complete course of the work is wholly divided into 2 parts.\\
+
+The first part explains the effort involed in developing a custom ORBSLAM3 ROS package using native methods of ORBSLAM3 library, camera calibration, calculation of IMU sensor intrinsic parameters, Camera-IMU extrinsic calibration to obtain the transformation matrix between the camera and IMU sensor(body) and the challenges encountered during the calibration. It also explains the failure of VI-SLAM on the drone, the reasons for the failure and VI-SLAM libraries used to experiment as an alternative for ORBSLAM3.\\
+
+The second part describes the idea of using the ORBSLAM3's Visual SLAM capabilities with GPS data to localize and estimate the keyframe trajectory with respect to a local ENU coordinate system and also a geo-referenced perspective in ECEF coordinate system. Further, explains about the different approaches used for the estimation and observations made.\\
+
+Finally, the results and verification information are presented while giving general idea on improvements possible and future development.
